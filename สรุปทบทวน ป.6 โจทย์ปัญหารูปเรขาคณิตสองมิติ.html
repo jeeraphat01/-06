@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>สรุปทบทวน ป.6 โจทย์ปัญหารูปเรขาคณิตสองมิติ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f9fb;--grid:#d3e4ec;--ink:#17324d;--sub:#4a647a;--card:#ffffff;--line:#17324d;--blue:#2a7de1;--sun:#ffd23f;--coral:#ff6b57;--mint:#2bb58a;--tint:#eaf3fb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1c28;--grid:#1c3042;--ink:#e8f1f8;--sub:#9db6c9;--card:#17293a;--line:#9db6c9;--blue:#6fb0ff;--sun:#ffd23f;--coral:#ff8a79;--mint:#4fd1a5;--tint:#1d3347}}
+:root[data-theme="dark"]{--bg:#0f1c28;--grid:#1c3042;--ink:#e8f1f8;--sub:#9db6c9;--card:#17293a;--line:#9db6c9;--blue:#6fb0ff;--sun:#ffd23f;--coral:#ff8a79;--mint:#4fd1a5;--tint:#1d3347}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:'Sarabun',sans-serif;font-size:17px;line-height:1.6}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+h1,h2,h3{font-family:'Mali','Sarabun',sans-serif;line-height:1.3;margin:0}
+header{padding:8px 0 4px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:4px 12px}
+.credit{font-family:'Mali','Sarabun',sans-serif;font-weight:700;font-size:14px;color:var(--sub);text-align:right;margin-left:auto;padding-top:2px}
+h1{font-size:34px;font-weight:700}
+.tag{display:inline-block;background:var(--sun);color:#17324d;font-weight:700;padding:2px 12px;border-radius:99px;font-size:15px;margin-bottom:8px}
+.lead{color:var(--sub);margin:6px 0 0}
+section{background:var(--card);border:2.5px solid var(--line);border-radius:18px;padding:18px 16px;margin-top:22px;box-shadow:5px 5px 0 var(--line)}
+h2{font-size:23px;margin-bottom:12px}
+h3{font-size:18px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{display:flex;gap:12px;align-items:flex-start}
+.steps b.n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:'Mali',sans-serif}
+.steps small{display:block;color:var(--sub);font-size:15px;line-height:1.4}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:420px){.two{grid-template-columns:1fr}}
+.box{background:var(--tint);border-radius:12px;padding:12px}
+.box ul{margin:6px 0 0;padding-left:20px}
+.shape{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;padding:12px 0;border-top:2px dashed var(--grid)}
+.shape:first-of-type{border-top:0}
+.shape svg{width:96px;height:80px}
+.f{font-family:'Mali',sans-serif;font-size:19px;font-weight:700;color:var(--blue)}
+.ex{font-size:15px;color:var(--sub)}
+.sp{stroke:var(--line);stroke-width:2.5;fill:var(--sun);stroke-linejoin:round}
+.dl{stroke:var(--coral);stroke-width:2;stroke-dasharray:4 3;fill:none}
+.tx{fill:var(--ink);font-size:11px;font-family:'Sarabun',sans-serif}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td{padding:8px 6px;border-top:2px dashed var(--grid);vertical-align:top}
+td:first-child{font-weight:700;width:38%}
+.warn{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.warn li{background:var(--tint);border-left:6px solid var(--coral);border-radius:8px;padding:10px 12px}
+.warn b{color:var(--coral)}
+details{background:var(--tint);border-radius:12px;margin-top:10px;padding:10px 14px}
+summary{cursor:pointer;font-weight:600;min-height:28px}
+summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.ans{margin:8px 0 0;color:var(--ink)}
+.ans strong{color:var(--mint)}
+.note{margin-top:14px;color:var(--sub);font-size:15px}
+.wk{background:var(--tint);border-radius:12px;padding:12px 14px;margin-top:12px}
+.wk p{margin:4px 0}
+.wk .k{font-weight:700;color:var(--blue)}
+.grp{margin:18px 0 0;font-size:18px;color:var(--coral)}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.2;margin:0 3px;font-size:.92em}
+.fr i{font-style:normal;padding:0 4px}.fr i:first-child{border-bottom:1.5px solid currentColor}
+.st{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.st li{display:none;background:var(--card);border-radius:10px;padding:10px 12px;border-left:6px solid var(--blue)}
+.st li.on{display:block;animation:in .25s}.st li.last{border-left-color:var(--mint)}
+.st li b:first-child{display:block;color:var(--blue);font-size:15px}.st li.last b:first-child{color:var(--mint)}
+@keyframes in{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.st li.on{animation:none}}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.bar button{min-height:44px;padding:0 14px;border:2px solid var(--line);border-radius:10px;background:var(--sun);color:#17324d;font:600 15px 'Sarabun',sans-serif;cursor:pointer}
+.bar .all,.bar .rs{background:var(--card);color:var(--ink)}.bar button:disabled{opacity:.5}
+.bar button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.fg{width:100%;max-width:300px;display:block;margin:10px auto 0;background:var(--card);border-radius:12px}
+.fg .sp{fill:var(--sun);fill-opacity:.4}.fg .ol{fill:none;stroke:var(--line);stroke-width:2.5}
+.fg .hole{fill:var(--card);stroke:var(--line);stroke-width:2.5;stroke-linejoin:round}
+.fg .ra{fill:none;stroke:var(--coral);stroke-width:2}
+.tl{fill:var(--ink);font-size:13px;font-weight:600;font-family:'Sarabun',sans-serif}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="top"><span class="tag">ป.6 · ค16201</span><span class="credit">ACE ACADEMY BY Kru.Newt</span></div>
+  <h1>สรุปทบทวน<br>โจทย์ปัญหารูปเรขาคณิตสองมิติ</h1>
+  <p class="lead">อ่านทีละกล่อง แล้วลองทำโจทย์ฝึกท้ายหน้า แตะที่ข้อเพื่อดูเฉลย</p>
+</header>
+
+<section>
+  <h2>ขั้นตอนทำโจทย์ปัญหา</h2>
+  <ol class="steps">
+    <li><b class="n">1</b><span>อ่านโจทย์ให้จบ<small>อ่านอย่างน้อย 2 รอบ</small></span></li>
+    <li><b class="n">2</b><span>ขีดเส้นใต้ “สิ่งที่กำหนด” และ “สิ่งที่ถาม”<small>ตัวเลขทุกตัวในโจทย์คือสิ่งที่กำหนด คำถามท้ายโจทย์คือสิ่งที่ถาม</small></span></li>
+    <li><b class="n">3</b><span>เลือกสูตรให้ตรงกับรูป<small>ดูว่าโจทย์ถามพื้นที่หรือความยาวรอบรูป</small></span></li>
+    <li><b class="n">4</b><span>แทนค่าและคำนวณ<small>เขียนสูตร แทนค่า แล้วตอบ พร้อมหน่วย</small></span></li>
+    <li><b class="n">5</b><span>ตรวจคำตอบ<small>ตอบสิ่งที่ถามไหม หน่วยถูกไหม ตัวเลขสมเหตุสมผลไหม</small></span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>ชนิดของสามเหลี่ยม</h2>
+  <div class="two">
+    <div class="box"><h3>แบ่งตามด้าน</h3>
+      <ul><li>ด้านเท่า: ยาวเท่ากันทั้ง 3 ด้าน</li><li>หน้าจั่ว: ยาวเท่ากัน 2 ด้าน</li><li>ด้านไม่เท่า: ยาวต่างกันหมด</li></ul></div>
+    <div class="box"><h3>แบ่งตามมุม (3 ชนิด)</h3>
+      <ul><li>มุมแหลม: ทุกมุมน้อยกว่า 90°</li><li>มุมฉาก: มี 1 มุมเป็น 90°</li><li>มุมป้าน: มี 1 มุมมากกว่า 90°</li></ul></div>
+  </div>
+  <p class="note"><b>เช็กก่อนสร้างสามเหลี่ยม:</b> ด้านสองด้านรวมกันต้อง<b>มากกว่า</b>ด้านที่สามเสมอ เช่น 3, 4, 5 สร้างได้ (3+4 &gt; 5) แต่ 2, 3, 5 สร้างไม่ได้ (2+3 = 5)</p>
+</section>
+
+<section>
+  <h2>สูตรพื้นที่ที่ต้องจำ</h2>
+
+  <div class="shape">
+    <svg viewBox="0 0 96 80" role="img" aria-label="สามเหลี่ยม"><polygon class="sp" points="8,70 88,70 58,10"/><line class="dl" x1="58" y1="10" x2="58" y2="70"/><text class="tx" x="62" y="46">สูง</text><text class="tx" x="36" y="78">ฐาน</text></svg>
+    <div><h3>สามเหลี่ยม</h3><div class="f">½ × ฐาน × สูง</div><div class="ex">ตัวอย่าง 1: ฐาน 12 สูง 5 → ½ × 12 × 5 = 30 ตร.ซม.<br>ตัวอย่าง 2: ฐาน 20 สูง 7 → ½ × 20 × 7 = 70 ตร.ซม.<br>ตัวอย่าง 3: ฐาน 9.6 สูง 5 → ½ × 9.6 × 5 = 24 ตร.ซม.</div></div>
+  </div>
+
+  <div class="shape">
+    <svg viewBox="0 0 96 80" role="img" aria-label="สี่เหลี่ยมคางหมู"><polygon class="sp" points="8,68 88,68 70,14 28,14"/><line class="dl" x1="28" y1="14" x2="28" y2="68"/><text class="tx" x="36" y="11">ขนาน</text><text class="tx" x="32" y="46">สูง</text></svg>
+    <div><h3>สี่เหลี่ยมคางหมู</h3><div class="f">½ × สูง × (ด้านคู่ขนานรวมกัน)</div><div class="ex">ตัวอย่าง 1: ขนาน 4 และ 6 สูง 5 → ½ × 5 × 10 = 25 ตร.ซม.<br>ตัวอย่าง 2: ขนาน 7 และ 13 สูง 6 → ½ × 6 × 20 = 60 ตร.ซม.<br>ตัวอย่าง 3: ขนาน 10 และ 14 สูง 9 → ½ × 9 × 24 = 108 ตร.ซม.</div></div>
+  </div>
+
+  <div class="shape">
+    <svg viewBox="0 0 96 80" role="img" aria-label="สี่เหลี่ยมรูปว่าว"><polygon class="sp" points="48,6 82,30 48,74 14,30"/><line class="dl" x1="48" y1="6" x2="48" y2="74"/><line class="dl" x1="14" y1="30" x2="82" y2="30"/></svg>
+    <div><h3>สี่เหลี่ยมรูปว่าว</h3><div class="f">½ × เส้นทแยงมุม × เส้นทแยงมุม</div><div class="ex">ตัวอย่าง 1: ทแยง 8 และ 6 → ½ × 8 × 6 = 24 ตร.ซม.<br>ตัวอย่าง 2: ทแยง 12 และ 10 → ½ × 12 × 10 = 60 ตร.ซม.<br>ตัวอย่าง 3: ทแยง 40 และ 30 ม. → ½ × 40 × 30 = 600 ตร.ม.<br>ใช้เส้นทแยงมุม ไม่ใช่ด้านข้าง</div></div>
+  </div>
+
+  <div class="shape">
+    <svg viewBox="0 0 96 80" role="img" aria-label="สี่เหลี่ยมจัตุรัส"><rect class="sp" x="18" y="8" width="60" height="60"/><text class="tx" x="40" y="42">ด้าน</text></svg>
+    <div><h3>สี่เหลี่ยมจัตุรัส</h3><div class="f">ด้าน × ด้าน</div><div class="ex">ตัวอย่าง 1: ด้าน 7 → 7 × 7 = 49 ตร.ซม.<br>ตัวอย่าง 2: ด้าน 15 ม. → 15 × 15 = 225 ตร.ม.<br>ตัวอย่าง 3: รอบรูป 20 → ด้าน 5 → 5 × 5 = 25 ตร.ซม.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>ความยาวรอบรูป</h2>
+  <table>
+    <tr><td>สามเหลี่ยม</td><td>บวกความยาวทั้ง 3 ด้าน<br><span class="ex">ด้านเท่า = 3 × ด้านละ</span></td></tr>
+    <tr><td>จัตุรัส</td><td>4 × ด้านละ<br><span class="ex">ย้อนกลับ: รอบรูป ÷ 4 = ด้านละ</span></td></tr>
+    <tr><td>หลายเหลี่ยมด้านเท่า</td><td>จำนวนด้าน × ความยาวด้าน<br><span class="ex">หกเหลี่ยม = 6 × ด้านละ</span></td></tr>
+    <tr><td>ล้อมเชือกหลายรอบ</td><td>ความยาวเชือก ÷ ความยาวรอบรูป = จำนวนรอบ<br><span class="ex">ถ้าล้อม 4 ชั้น ให้ × 4</span></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>ตัวอย่างโจทย์ทำให้ดูทีละขั้น</h2>
+  <div class="wk"><h3>ตัวอย่าง A: ปูกระเบื้อง</h3>
+    <p>พื้นที่รูปสามเหลี่ยมฐานยาว 16 ม. สูง 9 ม. ต้องใช้กระเบื้องกี่ตารางเมตร</p>
+    <p><span class="k">กำหนด:</span> ฐาน 16 ม. สูง 9 ม.</p>
+    <p><span class="k">ถาม:</span> พื้นที่ทั้งหมด</p>
+    <p><span class="k">สูตร:</span> ½ × ฐาน × สูง</p>
+    <p><span class="k">ทำ:</span> ½ × 16 × 9 = <b>72 ตร.ม.</b></p></div>
+  <div class="wk"><h3>ตัวอย่าง B: ล้อมเชือก</h3>
+    <p>เชือกยาว 72 ม. ล้อมสามเหลี่ยมมุมฉากที่มีด้านยาว 6, 8 และ 10 ม. ล้อมได้กี่รอบ และพื้นที่เท่าไร</p>
+    <p><span class="k">รอบรูป:</span> 6 + 8 + 10 = 24 ม.</p>
+    <p><span class="k">จำนวนรอบ:</span> 72 ÷ 24 = <b>3 รอบ</b></p>
+    <p><span class="k">พื้นที่:</span> ใช้ด้านประกอบมุมฉากเป็นฐานและสูง ½ × 6 × 8 = <b>24 ตร.ม.</b></p></div>
+  <div class="wk"><h3>ตัวอย่าง C: ลวดหนาม</h3>
+    <p>ล้อมที่ดินรูปห้าเหลี่ยมด้านเท่า ด้านละ 12 ม. จำนวน 3 ชั้น ใช้ลวดหนามยาวกี่เมตร</p>
+    <p><span class="k">ทำ:</span> 5 × 12 × 3 = <b>180 ม.</b></p></div>
+  <div class="wk"><h3>ตัวอย่าง D: แปลงดอกไม้รูปคางหมู</h3>
+    <p>ด้านคู่ขนานยาว 9 ม. และ 15 ม. สูง 8 ม. พื้นที่เท่าไร</p>
+    <p><span class="k">ทำ:</span> ½ × 8 × (9 + 15) = ½ × 8 × 24 = <b>96 ตร.ม.</b></p></div>
+  <div class="wk"><h3>ตัวอย่าง E: หาจำนวนเงิน</h3>
+    <p>ปูกระเบื้องสามเหลี่ยมฐาน 10 ม. สูง 8 ม. ราคาตารางเมตรละ 200 บาท ใช้เงินเท่าไร</p>
+    <p><span class="k">พื้นที่:</span> ½ × 10 × 8 = 40 ตร.ม.</p>
+    <p><span class="k">ค่าปู:</span> 40 × 200 = <b>8,000 บาท</b></p></div>
+</section>
+
+<section>
+  <h2>ข้อผิดพลาดที่เจอบ่อย</h2>
+  <ul class="warn">
+    <li><b>ลืม ½</b> สามเหลี่ยม คางหมู และว่าว ต้องมี ½ เสมอ</li>
+    <li><b>ใช้ด้านเอียงเป็นความสูง</b> ความสูงต้องตั้งฉากกับฐาน</li>
+    <li><b>คางหมูลืมบวกด้านคู่ขนาน</b> ต้องบวกทั้งสองด้านก่อนคูณ</li>
+    <li><b>สับสนหน่วย</b> พื้นที่ใช้ ตารางเซนติเมตร (ตร.ซม.) หรือ ตารางเมตร (ตร.ม.) ความยาวใช้ ซม. หรือ ม.</li>
+    <li><b>ตอบไม่ตรงคำถาม</b> โจทย์ถามจำนวนรอบ อย่าตอบเป็นเมตร</li>
+  </ul>
+</section>
+
+<section>
+  <h2>ตัวอย่างเพิ่ม: มุม รอบรูป และพื้นที่รูปประกอบ</h2>
+  <p class="note" style="margin-top:0">แตะข้อที่ต้องการ แล้วกด “ดูขั้นถัดไป” เพื่อดูวิธีทำทีละขั้น ผลรวมมุมภายในสามเหลี่ยม = 180° เสมอ</p>
+  <h3 class="grp">หามุม</h3><div id="ang"></div>
+  <h3 class="grp">ความยาวรอบรูป</h3><div id="per"></div>
+  <h3 class="grp">พื้นที่รูปประกอบ</h3><div id="cmp"></div>
+</section>
+<section>
+  <h2>โจทย์ฝึก 20 ข้อ</h2>
+  <p class="note" style="margin-top:0">คิดเองก่อน แล้วกดดูวิธีทำทีละขั้นเพื่อเช็กว่าผิดที่ขั้นไหน</p>
+  <div id="pr"></div>
+</section>
+</main>
+<script>
+const fr=(a,b)=>'<span class="fr"><i>'+a+'</i><i>'+b+'</i></span>';
+const fx=s=>s.replace(/\{([^\/}]+)\/([^}]+)\}/g,(_,a,b)=>fr(a,b)).replace(/½/g,fr(1,2));
+const M=document.querySelector('main');M.innerHTML=fx(M.innerHTML);
+function mk(id,n,q,st,fg){
+ const d=document.createElement('details');
+ d.innerHTML='<summary>'+fx(n+') '+q)+'</summary>'+(fg||'')+'<ol class="st">'+st.map((s,i)=>'<li'+(i==st.length-1?' class="last"':'')+'><b>ขั้นที่ '+(i+1)+': '+s[0]+'</b>'+fx(s[1])+'</li>').join('')+'</ol><div class="bar"><button class="nx"></button><button class="all">ดูทั้งหมด</button><button class="rs">เริ่มใหม่</button></div>';
+ const L=[...d.querySelectorAll('.st li')],nx=d.querySelector('.nx');let k=0;
+ const up=()=>{L.forEach((l,i)=>l.classList.toggle('on',i<k));nx.disabled=k>=L.length;nx.textContent=k>=L.length?'ครบทุกขั้นแล้ว':k?'ดูขั้นถัดไป ('+k+'/'+L.length+')':'ดูขั้นแรก';};
+ nx.onclick=()=>{k++;up()};d.querySelector('.all').onclick=()=>{k=L.length;up()};d.querySelector('.rs').onclick=()=>{k=0;up()};
+ up();document.getElementById(id).appendChild(d);}
+const G=(a,q)=>['กำหนดและสิ่งที่ถาม','กำหนด: '+a+'<br>ถาม: '+q];
+const T=(b,h,u)=>{const p=b*h;return[G('ฐาน = '+b+' '+u+', สูง = '+h+' '+u,'พื้นที่'),['เลือกสูตร','พื้นที่สามเหลี่ยม = {1/2} × ฐาน × สูง'],['แทนค่า','พื้นที่ = {1/2} × '+b+' × '+h],['คำนวณ','= {'+p+'/2}<br>= '+p/2],['ตอบ','<b>'+p/2+' ตร.'+u+'</b>']]};
+const Z=(a,b,h,u)=>{const s=a+b,p=h*s;return[G('ด้านคู่ขนาน '+a+' และ '+b+' '+u+', สูง '+h+' '+u,'พื้นที่'),['เลือกสูตร','พื้นที่คางหมู = {1/2} × สูง × (ผลบวกด้านคู่ขนาน)'],['แทนค่า','พื้นที่ = {1/2} × '+h+' × ('+a+' + '+b+')'],['คำนวณ','บวกในวงเล็บก่อน: '+a+' + '+b+' = '+s+'<br>= {1/2} × '+h+' × '+s+' = {'+p+'/2}<br>= '+p/2],['ตอบ','<b>'+p/2+' ตร.'+u+'</b>']]};
+const K=(a,b,u)=>{const p=a*b;return[G('เส้นทแยงมุมยาว '+a+' และ '+b+' '+u,'พื้นที่รูปว่าว'),['เลือกสูตร','พื้นที่ว่าว = {1/2} × เส้นทแยงมุมเส้นที่ 1 × เส้นทแยงมุมเส้นที่ 2'],['แทนค่า','พื้นที่ = {1/2} × '+a+' × '+b],['คำนวณ','= {'+p+'/2}<br>= '+p/2],['ตอบ','<b>'+p/2+' ตร.'+u+'</b>']]};
+const S=(p,u)=>{const s=p/4;return[G('รอบรูปจัตุรัส = '+p+' '+u,'ความยาวด้านและพื้นที่'),['หาความยาวด้าน','จัตุรัสมี 4 ด้านยาวเท่ากัน<br>ด้าน = รอบรูป ÷ 4 = {'+p+'/4} = '+s+' '+u],['เลือกสูตรพื้นที่','พื้นที่ = ด้าน × ด้าน'],['คำนวณ','= '+s+' × '+s+' = '+s*s],['ตอบ','ด้านยาว <b>'+s+' '+u+'</b>, พื้นที่ <b>'+s*s+' ตร.'+u+'</b>']]};
+const L=(rope,expr,per,u,g)=>[G(g,'ล้อมได้กี่รอบ'),['หาความยาวรอบรูป','รอบรูป = '+expr+' = '+per+' '+u],['หาจำนวนรอบ','จำนวนรอบ = ความยาวเชือก ÷ รอบรูป<br>= {'+rope+'/'+per+'} = '+rope/per],['ตอบ','<b>'+rope/per+' รอบ</b>']];
+const P=[
+['สามเหลี่ยมฐาน 14 ซม. สูง 9 ซม. มีพื้นที่เท่าไร',T(14,9,'ซม.')],
+['คางหมู ด้านคู่ขนานยาว 5 และ 11 ซม. สูง 4 ซม. มีพื้นที่เท่าไร',Z(5,11,4,'ซม.')],
+['สนามรูปว่าว เส้นทแยงมุมยาว 10 ม. และ 14 ม. มีพื้นที่เท่าไร',K(10,14,'ม.')],
+['ใช้เชือกยาว 36 ม. ล้อมแปลงผักรูปจัตุรัสพอดี แปลงผักมีพื้นที่เท่าไร',S(36,'ม.')],
+['เชือกยาว 60 ม. ล้อมสามเหลี่ยมด้านเท่า ด้านละ 5 ม. ล้อมได้กี่รอบ',L(60,'3 × 5',15,'ม.','เชือกยาว 60 ม., สามเหลี่ยมด้านเท่ายาวด้านละ 5 ม.')],
+['สามเหลี่ยมฐาน 20 ซม. สูง 7 ซม. มีพื้นที่เท่าไร',T(20,7,'ซม.')],
+['สวนรูปสามเหลี่ยมฐาน 15 ม. สูง 12 ม. มีพื้นที่เท่าไร',T(15,12,'ม.')],
+['สามเหลี่ยมหน้าจั่วฐาน 18 ซม. สูง 10 ซม. มีพื้นที่เท่าไร',T(18,10,'ซม.')],
+['สามเหลี่ยมมุมฉากมีด้านประกอบมุมฉากยาว 9 และ 12 ซม. ด้านตรงข้ามมุมฉากยาว 15 ซม. จงหาพื้นที่และความยาวรอบรูป',[G('ด้านประกอบมุมฉาก 9 และ 12 ซม., ด้านตรงข้ามมุมฉาก 15 ซม.','พื้นที่ และความยาวรอบรูป'),['พื้นที่: เลือกสูตร','ด้านประกอบมุมฉากทั้งสองด้านคือฐานและสูง<br>พื้นที่ = {1/2} × ฐาน × สูง'],['พื้นที่: คำนวณ','= {1/2} × 9 × 12 = {108/2} = 54 ตร.ซม.'],['หารอบรูป','บวกทั้งสามด้าน: 9 + 12 + 15 = 36 ซม.'],['ตอบ','พื้นที่ <b>54 ตร.ซม.</b>, รอบรูป <b>36 ซม.</b>']]],
+['สามเหลี่ยมฐาน 10 ม. มีพื้นที่ 40 ตร.ม. สูงกี่เมตร (คิดย้อนกลับ)',[G('ฐาน 10 ม., พื้นที่ 40 ตร.ม.','ความสูง'),['เขียนสูตร','พื้นที่ = {1/2} × ฐาน × สูง'],['แทนค่าที่รู้','40 = {1/2} × 10 × สูง<br>40 = 5 × สูง'],['คิดย้อนกลับ','สูง = 40 ÷ 5 = {40/5} = 8'],['ตอบ','<b>8 ม.</b><br>ตรวจ: {1/2} × 10 × 8 = 40 ✓']]],
+['คางหมู ด้านคู่ขนานยาว 6 และ 10 ซม. สูง 7 ซม. มีพื้นที่เท่าไร',Z(6,10,7,'ซม.')],
+['คางหมู ด้านคู่ขนานยาว 12 และ 18 ม. สูง 10 ม. มีพื้นที่เท่าไร',Z(12,18,10,'ม.')],
+['ว่าว เส้นทแยงมุมยาว 16 และ 9 ซม. มีพื้นที่เท่าไร',K(16,9,'ซม.')],
+['สนามรูปว่าว เส้นทแยงมุมยาว 30 และ 20 ม. มีพื้นที่เท่าไร',K(30,20,'ม.')],
+['จัตุรัสมีความยาวรอบรูป 48 ม. จงหาความยาวด้านและพื้นที่',S(48,'ม.')],
+['เชือกยาว 90 ม. ล้อมสามเหลี่ยมด้านเท่า ด้านละ 6 ม. ล้อมได้กี่รอบ',L(90,'3 × 6',18,'ม.','เชือกยาว 90 ม., สามเหลี่ยมด้านเท่ายาวด้านละ 6 ม.')],
+['ล้อมที่ดินรูปหกเหลี่ยมด้านเท่า ด้านละ 8 ม. จำนวน 3 ชั้น ใช้ลวดหนามยาวกี่เมตร',[G('หกเหลี่ยมด้านเท่า ด้านละ 8 ม., ล้อม 3 ชั้น','ความยาวลวดหนาม'),['หารอบรูป 1 ชั้น','6 × 8 = 48 ม.'],['คูณจำนวนชั้น','48 × 3 = 144'],['ตอบ','<b>144 ม.</b>']]],
+['สามเหลี่ยมมีด้านยาว 5, 12 และ 13 ม. เชือกยาว 150 ม. ล้อมได้กี่รอบ',L(150,'5 + 12 + 13',30,'ม.','เชือกยาว 150 ม., สามเหลี่ยมด้านยาว 5, 12, 13 ม.')],
+['เชือกยาว 100 ม. ล้อมแปลงจัตุรัสด้านละ 8 ม. ล้อมได้เต็มกี่รอบ และเหลือเชือกกี่เมตร',[G('เชือก 100 ม., จัตุรัสด้านละ 8 ม.','ล้อมได้เต็มกี่รอบ และเหลือกี่เมตร'),['หารอบรูป','4 × 8 = 32 ม.'],['หารเชือกด้วยรอบรูป','32 × 3 = 96 (ไม่เกิน 100)<br>32 × 4 = 128 (เกิน 100)<br>จึงล้อมเต็มได้ 3 รอบ'],['หาเชือกที่เหลือ','100 − 96 = 4 ม.'],['ตอบ','ล้อมได้เต็ม <b>3 รอบ</b> เหลือเชือก <b>4 ม.</b>']]],
+['ปูกระเบื้องพื้นสามเหลี่ยมฐาน 14 ม. สูง 6 ม. ราคาตารางเมตรละ 150 บาท ใช้เงินเท่าไร',[G('ฐาน 14 ม., สูง 6 ม., ตร.ม.ละ 150 บาท','ค่ากระเบื้องทั้งหมด'),['หาพื้นที่ก่อน','พื้นที่ = {1/2} × 14 × 6 = {84/2} = 42 ตร.ม.'],['คิดเป็นเงิน','42 × 150 = 6,300 บาท'],['ตอบ','<b>6,300 บาท</b>']]]
+];
+const sv=c=>'<svg class="fg" viewBox="0 0 240 144" role="img" aria-label="รูปประกอบโจทย์">'+c+'</svg>';
+const tl=(x,y,s,a)=>s?'<text class="tl" x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'">'+s+'</text>':'';
+const pg=(p,c)=>'<polygon class="'+(c||'sp')+'" points="'+p+'"/>';
+const ln=(a,b,c,d)=>'<line class="dl" x1="'+a+'" y1="'+b+'" x2="'+c+'" y2="'+d+'"/>';
+const ra=(x,y,dx,dy)=>'<polyline class="ra" points="'+(x+dx)+','+y+' '+(x+dx)+','+(y+dy)+' '+x+','+(y+dy)+'"/>';
+const cp=s=>tl(8,14,s,'start');
+const tri=(b,h,c,ax=150)=>sv(pg('30,118 210,118 '+ax+',22')+ln(ax,22,ax,118)+ra(ax,118,-10,-10)+tl(120,138,'ฐาน '+b)+tl(ax+6,78,'สูง '+h,'start')+cp(c));
+const trap=(a,b,h,c,sl)=>sv(pg('20,118 220,118 170,28 70,28')+(h?ln(70,28,70,118)+ra(70,118,10,-10)+tl(76,80,'สูง '+h,'start'):'')+tl(120,20,a)+tl(120,138,b)+(sl?tl(40,76,sl[0],'end')+tl(200,76,sl[1],'start'):'')+cp(c));
+const kite=(a,b)=>sv(pg('120,8 195,52 120,136 45,52')+ln(120,8,120,136)+ln(45,52,195,52)+ra(120,52,10,10)+tl(126,108,'ทแยง '+a,'start')+tl(160,44,'ทแยง '+b));
+const sq=(i,s,c)=>sv(pg('70,26 170,26 170,114 70,114')+tl(120,76,i)+tl(120,134,s)+cp(c));
+const eq=(c,s)=>sv(pg('120,18 196,128 44,128')+tl(120,142,s)+cp(c));
+const rt=(h,v,y,c)=>sv(pg('40,118 200,118 40,26')+ra(40,118,10,-10)+tl(120,138,h)+tl(34,76,v,'end')+tl(132,60,y,'start')+cp(c));
+const poly=(n,L,s,c)=>{let o='';for(let l=0;l<L;l++){const r=60-l*11,p=[];for(let k=0;k<n;k++){const a=-Math.PI/2+k*2*Math.PI/n;p.push((120+r*Math.cos(a)).toFixed(1)+','+(72+r*Math.sin(a)).toFixed(1))}o+=pg(p.join(' '),l==L-1?'sp':'ol')}return sv(o+tl(120,142,s)+cp(c))};
+const at=(l,r,t,ax,f)=>sv(pg('30,118 210,118 '+ax+',22')+(f?ra(30,118,10,-10):'')+tl(60,110,l)+tl(184,110,r)+tl(ax+(ax<70?26:0),52,t));
+const t3=(b,l,r,ax)=>sv(pg('30,118 210,118 '+ax+',22')+tl(120,138,b)+tl((30+ax)/2-6,66,l,'end')+tl((210+ax)/2+6,66,r,'start'));
+const rc=(w,h)=>sv(pg('80,24 210,24 210,104 80,104')+tl(145,124,w)+tl(74,70,h,'end'));
+const hs=()=>sv(pg('50,66 190,66 190,124 50,124')+pg('50,66 190,66 120,16')+ln(120,16,120,66)+ra(120,66,10,-10)+tl(120,140,'10 ม.')+tl(196,98,'6 ม.','start')+tl(126,42,'สูง 4 ม.','start'));
+const hl=()=>sv(pg('70,26 170,26 170,114 70,114')+pg('95,104 145,104 120,50','hole')+tl(120,134,'ด้านละ 12 ซม.')+cp('เจาะรูสามเหลี่ยม ฐาน 6 สูง 8 ซม.'));
+const F=[tri('14 ซม.','9 ซม.'),trap('5 ซม.','11 ซม.','4 ซม.'),kite('10 ม.','14 ม.'),sq('รอบรูป 36 ม.','ด้าน ?'),eq('เชือกยาว 60 ม.','ด้านละ 5 ม.'),tri('20 ซม.','7 ซม.'),tri('15 ม.','12 ม.'),tri('18 ซม.','10 ซม.','',120),rt('12 ซม.','9 ซม.','15 ซม.'),tri('10 ม.','?','พื้นที่ 40 ตร.ม.'),trap('6 ซม.','10 ซม.','7 ซม.'),trap('12 ม.','18 ม.','10 ม.'),kite('16 ซม.','9 ซม.'),kite('30 ม.','20 ม.'),sq('รอบรูป 48 ม.','ด้าน ?'),eq('เชือกยาว 90 ม.','ด้านละ 6 ม.'),poly(6,3,'ด้านละ 8 ม.','ล้อม 3 ชั้น'),rt('12 ม.','5 ม.','13 ม.','เชือกยาว 150 ม.'),sq('','ด้านละ 8 ม.','เชือกยาว 100 ม.'),tri('14 ม.','6 ม.','ตร.ม.ละ 150 บาท')];
+P.forEach((p,i)=>mk('pr',i+1,p[0],p[1],F[i]));
+const A=[
+['สามเหลี่ยมมีมุม 50° และ 60° อีกมุมหนึ่งกี่องศา',[G('มุม 50° และ 60°','มุมที่สาม'),['ความรู้ที่ใช้','ผลรวมมุมภายในสามเหลี่ยม = 180°'],['รวมมุมที่รู้','50° + 60° = 110°'],['เอา 180° ลบ','180° − 110° = 70°'],['ตอบ','<b>70°</b>']]],
+['สามเหลี่ยมมุมฉากมีมุมหนึ่ง 35° อีกมุมหนึ่งกี่องศา',[G('มุมฉาก และอีกมุม 35°','มุมที่เหลือ'),['ความรู้ที่ใช้','มุมฉาก = 90° และผลรวมมุม = 180°'],['รวมมุมที่รู้','90° + 35° = 125°'],['เอา 180° ลบ','180° − 125° = 55°'],['ตอบ','<b>55°</b>']]],
+['สามเหลี่ยมหน้าจั่วมีมุมยอด 40° มุมที่ฐานแต่ละมุมกี่องศา',[G('มุมยอด 40°','มุมที่ฐานแต่ละมุม'),['ความรู้ที่ใช้','หน้าจั่ว: มุมที่ฐานสองมุมเท่ากัน และผลรวมมุม = 180°'],['หามุมฐานรวมกัน','180° − 40° = 140°'],['แบ่งเป็นสองมุม','มุมฐานแต่ละมุม = {140/2} = 70°'],['ตอบ','<b>70°</b> ทั้งสองมุม']]],
+['สามเหลี่ยมด้านเท่ามีมุมแต่ละมุมกี่องศา',[G('สามเหลี่ยมด้านเท่า','มุมแต่ละมุม'),['ความรู้ที่ใช้','ด้านเท่า มุมเท่ากันทั้ง 3 มุม และผลรวม = 180°'],['แบ่งเป็นสามมุม','{180/3} = 60°'],['ตอบ','<b>60°</b> ทุกมุม']]],
+['สามเหลี่ยมมีมุม 100°, 50° และ 30° เป็นสามเหลี่ยมชนิดใดตามขนาดของมุม',[G('มุม 100°, 50°, 30°','ชนิดของสามเหลี่ยม'),['ตรวจผลรวม','100° + 50° + 30° = 180° ✓ สร้างได้'],['ดูมุมที่ใหญ่สุด','มี 100° ซึ่งมากกว่า 90°'],['ตอบ','<b>สามเหลี่ยมมุมป้าน</b>']]]];
+const R=[
+['สามเหลี่ยมหน้าจั่วฐาน 12 ซม. ด้านเท่ากันยาวด้านละ 10 ซม. รอบรูปยาวเท่าไร',[G('ฐาน 12 ซม., ด้านเท่ากันด้านละ 10 ซม.','ความยาวรอบรูป'),['บวกทุกด้าน','12 + 10 + 10 = 32'],['ตอบ','<b>32 ซม.</b>']]],
+['สี่เหลี่ยมผืนผ้ากว้าง 8 ซม. ยาว 15 ซม. จงหาความยาวรอบรูปและพื้นที่',[G('กว้าง 8 ซม., ยาว 15 ซม.','รอบรูป และพื้นที่'),['เลือกสูตร','รอบรูป = 2 × (กว้าง + ยาว)<br>พื้นที่ = กว้าง × ยาว'],['หารอบรูป','2 × (8 + 15) = 2 × 23 = 46 ซม.'],['หาพื้นที่','8 × 15 = 120 ตร.ซม.'],['ตอบ','รอบรูป <b>46 ซม.</b>, พื้นที่ <b>120 ตร.ซม.</b>']]],
+['คางหมูมีด้านคู่ขนาน 9 และ 15 ม. ด้านเอียงด้านละ 5 ม. ทำรั้วรอบเมตรละ 80 บาท ต้องใช้เงินเท่าไร',[G('ด้านคู่ขนาน 9, 15 ม., ด้านเอียง 5, 5 ม., เมตรละ 80 บาท','ค่ารั้ว'),['หารอบรูป','9 + 15 + 5 + 5 = 34 ม.'],['คิดเป็นเงิน','34 × 80 = 2,720 บาท'],['ตอบ','<b>2,720 บาท</b>']]],
+['ห้าเหลี่ยมด้านเท่ามีความยาวรอบรูป 65 ซม. แต่ละด้านยาวกี่เซนติเมตร',[G('ห้าเหลี่ยมด้านเท่า รอบรูป 65 ซม.','ความยาวแต่ละด้าน'),['ความรู้ที่ใช้','ห้าเหลี่ยมด้านเท่ามี 5 ด้านยาวเท่ากัน'],['หารเท่า ๆ กัน','ด้านละ = 65 ÷ 5 = {65/5} = 13'],['ตอบ','<b>13 ซม.</b>']]]];
+const C=[
+['บ้านรูปสี่เหลี่ยมผืนผ้ากว้าง 10 ม. ยาว 6 ม. มีหลังคารูปสามเหลี่ยมฐาน 10 ม. สูง 4 ม. ด้านหน้ามีพื้นที่รวมเท่าไร',[G('ผืนผ้า 10 × 6 ม., สามเหลี่ยมฐาน 10 ม. สูง 4 ม.','พื้นที่รวม'),['แยกเป็นสองส่วน','ส่วนที่ 1 สี่เหลี่ยมผืนผ้า<br>ส่วนที่ 2 สามเหลี่ยม'],['พื้นที่สี่เหลี่ยมผืนผ้า','10 × 6 = 60 ตร.ม.'],['พื้นที่สามเหลี่ยม','{1/2} × 10 × 4 = {40/2} = 20 ตร.ม.'],['รวมพื้นที่','60 + 20 = 80'],['ตอบ','<b>80 ตร.ม.</b>']]],
+['แผ่นไม้จัตุรัสด้านละ 12 ซม. เจาะรูปสามเหลี่ยมฐาน 6 ซม. สูง 8 ซม. ออก เหลือพื้นที่เท่าไร',[G('จัตุรัสด้าน 12 ซม., รูสามเหลี่ยมฐาน 6 สูง 8 ซม.','พื้นที่ที่เหลือ'),['พื้นที่จัตุรัส','12 × 12 = 144 ตร.ซม.'],['พื้นที่ส่วนที่เจาะออก','{1/2} × 6 × 8 = {48/2} = 24 ตร.ซม.'],['เอาพื้นที่ที่เจาะออกไปลบ','144 − 24 = 120'],['ตอบ','<b>120 ตร.ซม.</b>']]]];
+const FA=[at('50°','60°','?',130),at('','35°','?',30,1),at('?','?','40°',120),at('?','?','?',120),at('100°','30°','50°',14)];
+const FR=[t3('ฐาน 12 ซม.','10 ซม.','10 ซม.',120),rc('ยาว 15 ซม.','กว้าง 8 ซม.'),trap('9 ม.','15 ม.','','',['5 ม.','5 ม.']),poly(5,1,'ด้านละ ?','รอบรูป 65 ซม.')];
+const FC=[hs(),hl()];
+A.forEach((p,i)=>mk('ang','ก'+(i+1),p[0],p[1],FA[i]));R.forEach((p,i)=>mk('per','ข'+(i+1),p[0],p[1],FR[i]));C.forEach((p,i)=>mk('cmp','ค'+(i+1),p[0],p[1],FC[i]));
+</script>
+
+</body>
+</html>
